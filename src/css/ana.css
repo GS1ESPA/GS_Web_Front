@@ -136,3 +136,19 @@ main section img {
 	border-radius: 50%;
 	margin-bottom: 20px;
 }
+
+#slideshow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgb(250, 174, 174);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#slideshow p {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+}
