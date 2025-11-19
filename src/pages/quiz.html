@@ -12,7 +12,7 @@
             <h1>LinkeDino</h1>
         </div>
         <div class="menu">
-            <a href="#">Home</a>
+            <a href="../../index.html">Home</a>
             <a href="#">Sobre</a>
             <a href="#">Serviços</a>
             <a href="#">Contato</a>
@@ -119,8 +119,32 @@
         </aside>
         <main>
             <section class="hero">
-                <h2>Bem-vindo ao LinkeDino!</h2>
-                <p>Conectando profissionais e oportunidades.</p>
+                <h2>Quiz do Mercado de Trabalho</h2>
+                <p>Informe suas preferências e receba uma recomendação instantânea de profissional.</p>
+            </section>
+            <section class="quiz-card">
+                <form id="quiz-form">
+                    <fieldset>
+                        <legend>1. Qual área de atuação você precisa reforçar?</legend>
+                        <div class="quiz-options" id="options-area"></div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>2. Em qual cidade/região o profissional deve atuar?</legend>
+                        <div class="quiz-options" id="options-cidade"></div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>3. Qual skill ou tecnologia é prioridade?</legend>
+                        <div class="quiz-options" id="options-tecnologia"></div>
+                    </fieldset>
+                    <div class="quiz-actions">
+                        <button type="reset">Limpar respostas</button>
+                        <button type="submit">Encontrar profissional ideal</button>
+                    </div>
+                </form>
+            </section>
+            <section class="result-card" id="quiz-result" aria-live="polite">
+                <h4>Resultado</h4>
+                <p>Responda ao quiz acima para que possamos indicar o profissional mais compatível.</p>
             </section>
         </main>
     </div>
