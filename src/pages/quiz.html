@@ -119,32 +119,29 @@
         </aside>
         <main>
             <section class="hero">
-                <h2>Quiz do Mercado de Trabalho</h2>
-                <p>Informe suas preferências e receba uma recomendação instantânea de profissional.</p>
+                <h2>Quiz sobre o mercado de tecnologia</h2>
+                <p>Teste seus conhecimentos sobre áreas em alta e cidades que puxam a demanda por talentos digitais na América Latina.</p>
             </section>
-            <section class="quiz-card">
-                <form id="quiz-form">
-                    <fieldset>
-                        <legend>1. Qual área de atuação você precisa reforçar?</legend>
-                        <div class="quiz-options" id="options-area"></div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>2. Em qual cidade/região o profissional deve atuar?</legend>
-                        <div class="quiz-options" id="options-cidade"></div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>3. Qual skill ou tecnologia é prioridade?</legend>
-                        <div class="quiz-options" id="options-tecnologia"></div>
-                    </fieldset>
-                    <div class="quiz-actions">
-                        <button type="reset">Limpar respostas</button>
-                        <button type="submit">Encontrar profissional ideal</button>
-                    </div>
-                </form>
+            <section class="quiz-card" aria-live="polite">
+                <header class="quiz-meta">
+                    <p id="quiz-progress">Pergunta 1 de 1</p>
+                    <p id="quiz-score">0 acertos</p>
+                </header>
+                <div class="quiz-context">
+                    <span id="quiz-area">Área: —</span>
+                    <span id="quiz-city">Cidade em destaque: —</span>
+                </div>
+                <h3 id="quiz-question">Carregando pergunta...</h3>
+                <div class="quiz-options" id="quiz-options"></div>
+                <p class="quiz-feedback" id="quiz-feedback"></p>
+                <div class="quiz-actions">
+                    <button type="button" id="quiz-next" disabled>Responder próxima</button>
+                    <button type="button" id="quiz-restart">Recomeçar</button>
+                </div>
             </section>
-            <section class="result-card" id="quiz-result" aria-live="polite">
-                <h4>Resultado</h4>
-                <p>Responda ao quiz acima para que possamos indicar o profissional mais compatível.</p>
+            <section class="result-card" id="quiz-result">
+                <h4>Resumo</h4>
+                <p>Avance pelas perguntas para ver seu desempenho e descobrir que cidades concentram vagas estratégicas em cada área.</p>
             </section>
         </main>
     </div>

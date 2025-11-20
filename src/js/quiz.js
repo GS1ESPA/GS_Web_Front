@@ -1,209 +1,246 @@
-const perfisSimulados = [
+const perguntasMercado = [
 	{
-		id: "gerson",
-		nome: "Gerson Altamir",
 		area: "Engenharia de Software",
 		cidade: "São Paulo",
-		tecnologia: "Arquitetura distribuída resiliente",
-		pagina: "./gerson.html",
-		imagem: "../assets/imgs/Rutenio.jpg"
+		pergunta: "Qual tipo de trabalho as fintechs paulistas mais pedem dos squads de engenharia?",
+		opcoes: [
+			"Produtos digitais full-stack orientados a microsserviços",
+			"Migração de sistemas COBOL para mainframe",
+			"Suporte a impressoras departamentais",
+			"Administração de datacenters on-premise sem automação"
+		],
+		resposta: "Produtos digitais full-stack orientados a microsserviços",
+		explicacao: "A capital concentra hubs de fintechs que priorizam squads capazes de iterar rápido com microsserviços cloud-native."
 	},
 	{
-		id: "ana",
-		nome: "Ana Souza",
 		area: "Gerência de Projetos",
 		cidade: "Rio de Janeiro",
-		tecnologia: "Gestão ágil com foco em Scrum",
-		pagina: "./ana.html",
-		imagem: "../assets/imgs/Ana.avif"
+		pergunta: "Projetos de transformação digital em energia e telecom no Rio normalmente buscam gerentes com qual foco?",
+		opcoes: [
+			"PMOs híbridos que combinam métodos ágeis e compliance regulatório",
+			"Cronogramas em papel e aprovação manual",
+			"Coordenação exclusiva de eventos corporativos",
+			"Gestão de facilities e manutenção predial"
+		],
+		resposta: "PMOs híbridos que combinam métodos ágeis e compliance regulatório",
+		explicacao: "As grandes operadoras cariocas precisam de PMs que traduzam normas da ANEEL/ANATEL para cadências ágeis."
 	},
 	{
-		id: "joao",
-		nome: "João Silva",
-		area: "Desenvolvimento Front-end",
-		cidade: "Recife",
-		tecnologia: "Interfaces reativas em React",
-		pagina: "./joao.html",
-		imagem: "../assets/imgs/joao.webp"
-	},
-	{
-		id: "maria",
-		nome: "Maria Oliveira",
 		area: "Ciência de Dados",
 		cidade: "Salvador",
-		tecnologia: "Modelagem preditiva orientada a negócios",
-		pagina: "./maria.html",
-		imagem: "../assets/imgs/Maria.jpg"
+		pergunta: "Os polos de varejo e logística em Salvador costumam contratar cientistas de dados para qual desafio?",
+		opcoes: [
+			"Modelos preditivos de demanda e rotas para operações no Nordeste",
+			"Renderização 3D de jogos multiplayer",
+			"Suporte de help desk nível 1",
+			"Catalogação manual de documentos físicos"
+		],
+		resposta: "Modelos preditivos de demanda e rotas para operações no Nordeste",
+		explicacao: "Centros logísticos na Bahia apostam em analytics para abastecimento omnichannel e otimização de frotas."
 	},
 	{
-		id: "carlos",
-		nome: "Carlos Pereira",
 		area: "Segurança da Informação",
 		cidade: "Curitiba",
-		tecnologia: "Hardening de redes corporativas",
-		pagina: "./carlos.html",
-		imagem: "../assets/imgs/carlos.jpg"
+		pergunta: "Qual frente de segurança fica em evidência com a cadeia automotiva e fintechs de Curitiba?",
+		opcoes: [
+			"Times Blue/Red com foco em hardening de APIs e IoT embarcado",
+			"Inventário de papelada física",
+			"Treinamento de etiqueta corporativa",
+			"Suporte a telefonia PABX"
+		],
+		resposta: "Times Blue/Red com foco em hardening de APIs e IoT embarcado",
+		explicacao: "A região abriga montadoras e bancos digitais que priorizam testes ofensivos e blindagem de dispositivos conectados."
 	},
 	{
-		id: "juan",
-		nome: "Juan Martinez",
 		area: "DevOps",
 		cidade: "Bogotá",
-		tecnologia: "Automação de pipelines CI/CD",
-		pagina: "./juan.html",
-		imagem: "../assets/imgs/Juan.jpg"
+		pergunta: "Os centros nearshore colombianos demandam profissionais de DevOps focados em quê?",
+		opcoes: [
+			"Automação de pipelines multi-cloud e confiabilidade de plataformas",
+			"Digitação de dados em ERP legado",
+			"Design de folhetos impressos",
+			"Operação de telefonia analógica"
+		],
+		resposta: "Automação de pipelines multi-cloud e confiabilidade de plataformas",
+		explicacao: "Bogotá exporta serviços de engenharia site reliability para clientes da América do Norte."
 	},
 	{
-		id: "laura",
-		nome: "Laura Gómez",
 		area: "UX/UI Design",
 		cidade: "Buenos Aires",
-		tecnologia: "Prototipagem de alta fidelidade",
-		pagina: "./laura.html",
-		imagem: "../assets/imgs/Laura.jpg"
+		pergunta: "Os estúdios de produto porteño costumam destacar designers com qual entrega principal?",
+		opcoes: [
+			"Pesquisa contínua com usuários e design systems bilíngues",
+			"Manutenção de infraestrutura elétrica",
+			"Operação de caixa em lojas físicas",
+			"Produção de comerciais televisivos"
+		],
+		resposta: "Pesquisa contínua com usuários e design systems bilíngues",
+		explicacao: "Scale-ups argentinas atendem LATAM e EUA, exigindo experiências consistentes em múltiplos idiomas."
 	},
 	{
-		id: "pedro",
-		nome: "Pedro Alvarez",
 		area: "Product Management",
 		cidade: "Montevidéu",
-		tecnologia: "Roadmapping orientado a métricas",
-		pagina: "./pedro.html",
-		imagem: "../assets/imgs/pedro.avif"
+		pergunta: "O hub uruguaio de serviços digitais prioriza PMs especializados em quê?",
+		opcoes: [
+			"Roadmaps orientados a métricas para banking digital e gaming",
+			"Controle de estoque em frigoríficos",
+			"Gestão de frota agrícola",
+			"Secretariado executivo"
+		],
+		resposta: "Roadmaps orientados a métricas para banking digital e gaming",
+		explicacao: "Startups uruguaias miram fintech e estúdios de games, cobrando OKRs claros e experimentação guiada por dados."
 	},
 	{
-		id: "kleber",
-		nome: "Kléber Santos",
 		area: "Quality Assurance",
 		cidade: "Porto Alegre",
-		tecnologia: "Testes exploratórios de alto impacto",
-		pagina: "./kleber.html",
-		imagem: "../assets/imgs/kleber.webp"
-	},
-	{
-		id: "clovis",
-		nome: "Clóvis Lima",
-		area: "Consultoria em TI",
-		cidade: "Belo Horizonte",
-		tecnologia: "Governança de TI orientada a resultados",
-		pagina: "./clovis.html",
-		imagem: "../assets/imgs/clovis.jpeg"
+		pergunta: "Qual tipo de atuação em QA ganha espaço com healthtechs e indústrias gaúchas?",
+		opcoes: [
+			"Testes automatizados regulados e validação contínua de APIs",
+			"Digitação de notas fiscais",
+			"Treinamento de recepcionistas",
+			"Monitoramento de CFTV"
+		],
+		resposta: "Testes automatizados regulados e validação contínua de APIs",
+		explicacao: "O polo gaúcho precisa de QA que traduza requisitos da Anvisa/ISO para pipelines automatizados."
 	}
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-	const form = document.getElementById("quiz-form");
-	const areaContainer = document.getElementById("options-area");
-	const cidadeContainer = document.getElementById("options-cidade");
-	const tecnologiaContainer = document.getElementById("options-tecnologia");
+	const questionEl = document.getElementById("quiz-question");
+	const optionsEl = document.getElementById("quiz-options");
+	const progressEl = document.getElementById("quiz-progress");
+	const scoreEl = document.getElementById("quiz-score");
+	const areaEl = document.getElementById("quiz-area");
+	const cityEl = document.getElementById("quiz-city");
+	const feedbackEl = document.getElementById("quiz-feedback");
+	const nextBtn = document.getElementById("quiz-next");
+	const restartBtn = document.getElementById("quiz-restart");
 	const resultCard = document.getElementById("quiz-result");
 
-	if (!form || !areaContainer || !cidadeContainer || !tecnologiaContainer || !resultCard) {
+	if (!questionEl || !optionsEl || !progressEl || !scoreEl || !areaEl || !cityEl || !feedbackEl || !nextBtn || !restartBtn || !resultCard) {
 		return;
 	}
 
-	preencherOpcoes(areaContainer, gerarOpcoesUnicas("area"), "area");
-	preencherOpcoes(cidadeContainer, gerarOpcoesUnicas("cidade"), "cidade");
-	preencherOpcoes(tecnologiaContainer, gerarOpcoesUnicas("tecnologia"), "tecnologia");
+	let indiceAtual = 0;
+	let pontuacao = 0;
+	let perguntaRespondida = false;
 
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
-		const preferencia = new FormData(form);
-		const selecionados = {
-			area: preferencia.get("area"),
-			cidade: preferencia.get("cidade"),
-			tecnologia: preferencia.get("tecnologia")
-		};
+	const totalPerguntas = perguntasMercado.length;
+	carregarPergunta();
 
-		const camposSemResposta = Object.entries(selecionados)
-			.filter(([, valor]) => !valor)
-			.map(([chave]) => chave);
-
-		if (camposSemResposta.length > 0) {
-			exibirMensagem(resultCard, `Selecione uma opção em: ${camposSemResposta.join(", ")}.`);
+	nextBtn.addEventListener("click", () => {
+		if (nextBtn.disabled) {
 			return;
 		}
 
-		const profissional = recomendarProfissional(selecionados);
-		exibirResultado(resultCard, profissional, selecionados);
-	});
-
-	form.addEventListener("reset", () => {
-		setTimeout(() => {
-			exibirMensagem(resultCard, "Responda ao quiz acima para que possamos indicar o profissional mais compatível.");
-		}, 0);
-	});
-});
-
-function gerarOpcoesUnicas(campo) {
-	return Array.from(new Set(perfisSimulados.map((perfil) => perfil[campo]))).sort();
-}
-
-function preencherOpcoes(container, opcoes, nomeCampo) {
-	const fragment = document.createDocumentFragment();
-	opcoes.forEach((opcao) => {
-		const label = document.createElement("label");
-		label.className = "quiz-option";
-
-		const input = document.createElement("input");
-		input.type = "radio";
-		input.name = nomeCampo;
-		input.value = opcao;
-
-		const texto = document.createElement("span");
-		texto.textContent = opcao;
-
-		label.appendChild(input);
-		label.appendChild(texto);
-		fragment.appendChild(label);
-	});
-	container.textContent = "";
-	container.appendChild(fragment);
-}
-
-function recomendarProfissional(preferencia) {
-	let melhorPerfil = null;
-	let maiorPontuacao = -1;
-
-	perfisSimulados.forEach((perfil) => {
-		let pontuacao = 0;
-		if (perfil.area === preferencia.area) pontuacao += 2;
-		if (perfil.cidade === preferencia.cidade) pontuacao += 1;
-		if (perfil.tecnologia === preferencia.tecnologia) pontuacao += 2;
-
-		if (pontuacao > maiorPontuacao) {
-			maiorPontuacao = pontuacao;
-			melhorPerfil = perfil;
+		if (indiceAtual === totalPerguntas - 1) {
+			finalizarQuiz();
+			return;
 		}
+
+		indiceAtual += 1;
+		carregarPergunta();
 	});
 
-	return melhorPerfil;
-}
+	restartBtn.addEventListener("click", () => {
+		indiceAtual = 0;
+		pontuacao = 0;
+		carregarPergunta();
+		resultCard.innerHTML = `
+			<h4>Resumo</h4>
+			<p>Avance pelas perguntas para ver seu desempenho e descobrir que cidades concentram vagas estratégicas em cada área.</p>
+		`;
+	});
 
-function exibirResultado(container, perfil, preferencia) {
-	if (!perfil) {
-		exibirMensagem(container, "Não encontramos um profissional que combine com essas respostas. Tente variar suas escolhas.");
-		return;
+	function carregarPergunta() {
+		const perguntaAtual = perguntasMercado[indiceAtual];
+		perguntaRespondida = false;
+		nextBtn.disabled = true;
+		nextBtn.textContent = indiceAtual === totalPerguntas - 1 ? "Ver resultado" : "Responder próxima";
+		progressEl.textContent = `Pergunta ${indiceAtual + 1} de ${totalPerguntas}`;
+		scoreEl.textContent = `${pontuacao} acerto${pontuacao === 1 ? "" : "s"}`;
+		areaEl.textContent = `Área: ${perguntaAtual.area}`;
+		cityEl.textContent = `Cidade em destaque: ${perguntaAtual.cidade}`;
+		questionEl.textContent = perguntaAtual.pergunta;
+		feedbackEl.textContent = "";
+
+		optionsEl.innerHTML = "";
+		const opcoes = embaralhar([...perguntaAtual.opcoes]);
+		opcoes.forEach((opcao) => {
+			const botao = document.createElement("button");
+			botao.type = "button";
+			botao.className = "quiz-option";
+			botao.textContent = opcao;
+			botao.setAttribute("data-opcao", opcao);
+			botao.addEventListener("click", () => selecionarOpcao(botao, perguntaAtual));
+			optionsEl.appendChild(botao);
+		});
 	}
 
-	container.innerHTML = `
-		<h4>Profissional recomendado</h4>
-		<div class="recommended-card">
-			<img src="${perfil.imagem}" alt="Foto de ${perfil.nome}">
-			<div>
-				<strong>${perfil.nome}</strong>
-				<p class="match-details">${perfil.area} · ${perfil.cidade}</p>
-				<p>${perfil.tecnologia}</p>
-				<a href="${perfil.pagina}">Ver perfil completo</a>
-			</div>
-		</div>
-		<p>Baseado nas preferências: ${preferencia.area}, ${preferencia.cidade}, ${preferencia.tecnologia}.</p>
-	`;
-}
+	function selecionarOpcao(botaoSelecionado, perguntaAtual) {
+		if (perguntaRespondida) {
+			return;
+		}
 
-function exibirMensagem(container, mensagem) {
-	container.innerHTML = `
-		<h4>Resultado</h4>
-		<p>${mensagem}</p>
-	`;
-}
+		perguntaRespondida = true;
+		nextBtn.disabled = false;
+
+		const botoes = optionsEl.querySelectorAll("button");
+		botoes.forEach((btn) => {
+			btn.disabled = true;
+			if (btn.getAttribute("data-opcao") === perguntaAtual.resposta) {
+				btn.classList.add("correct");
+			}
+		});
+
+		const respostaSelecionada = botaoSelecionado.getAttribute("data-opcao");
+		const acertou = respostaSelecionada === perguntaAtual.resposta;
+
+		if (acertou) {
+			pontuacao += 1;
+			feedbackEl.textContent = "Mandou bem! Essa é a demanda principal da região.";
+		} else {
+			botaoSelecionado.classList.add("incorrect");
+			feedbackEl.textContent = `Resposta correta: ${perguntaAtual.resposta}.`;
+		}
+
+		feedbackEl.textContent += ` ${perguntaAtual.explicacao}`;
+		scoreEl.textContent = `${pontuacao} acerto${pontuacao === 1 ? "" : "s"}`;
+		atualizarResumoParcial();
+	}
+
+	function atualizarResumoParcial() {
+		resultCard.innerHTML = `
+			<h4>Resumo parcial</h4>
+			<p>Você respondeu ${indiceAtual + 1} de ${totalPerguntas} perguntas e acertou ${pontuacao}.</p>
+		`;
+	}
+
+	function finalizarQuiz() {
+		nextBtn.disabled = true;
+		feedbackEl.textContent = "";
+		resultCard.innerHTML = `
+			<h4>Mercado mapeado!</h4>
+			<p>Você acertou ${pontuacao} de ${totalPerguntas} questões sobre áreas e cidades em destaque.</p>
+			<p>${gerarDiagnostico()}</p>
+		`;
+	}
+
+	function gerarDiagnostico() {
+		if (pontuacao === totalPerguntas) {
+			return "Excelente! Você está por dentro das demandas regionais e pode usar isso em entrevistas e networking.";
+		}
+		if (pontuacao >= totalPerguntas * 0.6) {
+			return "Bom resultado! Revise as cidades em que errou para identificar oportunidades de especialização.";
+		}
+		return "Que tal revisitar os relatórios de mercado e conversar com profissionais das capitais citadas? O cenário muda rápido.";
+	}
+
+	function embaralhar(lista) {
+		for (let i = lista.length - 1; i > 0; i -= 1) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[lista[i], lista[j]] = [lista[j], lista[i]];
+		}
+		return lista;
+	}
+});

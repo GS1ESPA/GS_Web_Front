@@ -143,27 +143,14 @@ div ul li a {
     gap: 24px;
 }
 
-.quiz-card fieldset {
-    border: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.quiz-card legend {
-    font-weight: 600;
-    color: #e75151;
-}
-
 .quiz-options {
+    list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 12px;
 }
 
 .quiz-option {
-    position: relative;
     border: 2px solid transparent;
     border-radius: 10px;
     padding: 14px 18px;
@@ -171,6 +158,9 @@ div ul li a {
     cursor: pointer;
     transition: transform 0.2s ease, border 0.2s ease, background-color 0.2s ease;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
 }
 
 .quiz-option:hover {
@@ -178,25 +168,36 @@ div ul li a {
     border-color: #e75151;
 }
 
-.quiz-option input {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.quiz-option span {
-    pointer-events: none;
-}
-
-.quiz-option input:checked + span,
-.quiz-option input:focus-visible + span {
-    color: #c44343;
+.quiz-option.correct {
+    border-color: #2e8b57;
+    background-color: #e2f5ea;
     font-weight: 600;
 }
 
-.quiz-option input:checked + span::before {
-    content: "✔ ";
+.quiz-option.incorrect {
+    border-color: #cc3c3c;
+    background-color: #ffe5e5;
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #c44343;
+}
+
+.quiz-context {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: #5c5c5c;
+}
+
+.quiz-feedback {
+    min-height: 24px;
+    font-weight: 600;
+    color: #444;
 }
 
 .quiz-actions {
@@ -217,7 +218,7 @@ div ul li a {
     transition: background-color 0.2s ease;
 }
 
-.quiz-actions button[type="reset"] {
+#quiz-restart {
     background-color: white;
     color: #e75151;
     border: 2px solid #e75151;
@@ -227,8 +228,13 @@ div ul li a {
     background-color: #c44343;
 }
 
-.quiz-actions button[type="reset"]:hover {
+#quiz-restart:hover {
     background-color: #ffe8e8;
+}
+
+#quiz-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .result-card {
